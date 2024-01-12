@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require("path");
 
 const database = require('./config/database');
 const { cloudinaryConnect } = require('./config/cloudinary');
@@ -55,12 +56,18 @@ cloudinaryConnect();
 
 //default route
 
-app.get("/" , (req , res)=> {
-	return res.json({
-        success : true,
-		message : "Your Server is up and running ......."
-	})
-} )
+// app.get("/" , (req , res)=> {
+// 	return res.json({
+//         success : true,
+// 		message : "Your Server is up and running ......."
+// 	})
+// } );
+
+
+app.get("/", (req, res) => {
+	app.use(express.static(path.resolve(__dirname, "frontend", "build")));
+	res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+	});
 
 
 app.listen(PORT , ()=> {
