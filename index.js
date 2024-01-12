@@ -18,7 +18,7 @@ const profileRoute = require('./routes/Profile');
 const userRoute = require('./routes/User');
 const contactRoute = require('./routes/Contact');
 
-const PORT = process.env.PORT || 4000;
+// const PORT = process.env.PORT || 4000;
 
 
 //all parser
@@ -70,7 +70,7 @@ app.get("/", (req, res) => {
 	});
 
 
-app.listen(PORT , ()=> {
+app.listen(4000 , ()=> {
 	console.log("Server Connected Successfully");
 })
 
