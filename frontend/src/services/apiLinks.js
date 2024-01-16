@@ -1,4 +1,4 @@
-const BASE_URL = `${window.location.origin}/api/v1`
+const BASE_URL =`${window.location.origin}/api/v1`
 
 // Auth endpoint
 export const authEndpoints = {

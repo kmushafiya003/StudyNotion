@@ -5,6 +5,7 @@ import RatingStars from "./RatingStars";
 import ReactStars from "react-rating-stars-component";
 import { apiConnector } from "../../services/apiConnector";
 import { ratingsEndpoints } from "../../services/apiLinks";
+import { useRef } from "react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -16,6 +17,7 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const truncateWords = 15;
 
+  const swiper = useRef(null);
   useEffect(() => {
     const fetchAllReviews = async () => {
       const response = await apiConnector(
@@ -45,6 +47,7 @@ const Reviews = () => {
 
       <div className=" max-w-maxContent  sm:px-0 xxs:px-8 px-6">
         <Swiper
+        ref={swiper}
           slidesPerView={1}
           spaceBetween={25}
           loop={true}

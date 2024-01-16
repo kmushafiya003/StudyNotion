@@ -51,8 +51,11 @@ const Navbar = () => {
   const fetchSublinks = async () => {
     try {
       const result = await apiConnector("GET", categories.GET_CATEGORIES_API);
+     
+      setSubLinks(result?.data?.data);
     
-      setSubLinks(result.data.data);
+      console.log("Result : " , result?.data?.data);
+    
 
     }
     catch (err) {
@@ -117,7 +120,7 @@ const Navbar = () => {
                             
 
                             {
-                              subLinks.length ? (
+                              subLinks?.length ? (
 
                                 subLinks.map((subLink, index) => {
 
