@@ -24,6 +24,8 @@ const EditCourse = () => {
   const [loading , setLoading] = useState(false);
   const {token} = useSelector((state)=> state.auth)
 
+  console.log("course : " , course);
+
 
   useEffect(()=> {
 

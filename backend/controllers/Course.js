@@ -365,12 +365,12 @@ exports.getFullCourseDetails = async (req, res) => {
 
     // accessing draft course is forbidden
 
-    if (courseDetails.status === "Draft") {
-      res.status(401).json({
-        success: false,
-        message: "Accessing a draft course is forbidden",
-      });
-    }
+    // if (courseDetails.status === "Draft") {
+    //   res.status(401).json({
+    //     success: false,
+    //     message: "Accessing a draft course is forbidden",
+    //   });
+    // }
 
     // Now make the total Time Duration
 
@@ -399,9 +399,11 @@ exports.getFullCourseDetails = async (req, res) => {
       },
     });
   } catch (err) {
+
     return res.status(500).json({
       success: false,
       message: err.message,
+      
     });
   }
 };
