@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import RatingStars from '../../common/RatingStars'
+// import RatingStars from '../../common/RatingStars'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { GetavgRating } from '../../../utils/avgRating'
@@ -46,11 +46,11 @@ const CourseCard = ({ course, Height, fullRounded }) => {
 
             {/* ------------------- Ratings ------------------ */}
 
-            <div className='flex gap-x-3 text-sm'>
+            {/* <div className='flex gap-x-3 text-sm'>
               <p className='text-richblack-5'>{avgReviewCount || 0}</p>
-              <RatingStars Review_Count={avgReviewCount} />
+              <RatingStars Review_Count={avgReviewCount || 0} />
               <p className='text-richblack-400'>{course?.ratingAndReviews?.length} Ratings</p>
-            </div>
+            </div> */}
 
             {/* ----------------- course price ------------------ */}
 

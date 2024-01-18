@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import RatingStars from "./RatingStars";
+// import RatingStars from "./RatingStars";
 import ReactStars from "react-rating-stars-component";
 import { apiConnector } from "../../services/apiConnector";
 import { ratingsEndpoints } from "../../services/apiLinks";

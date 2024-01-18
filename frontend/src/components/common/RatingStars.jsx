@@ -25,6 +25,10 @@ const RatingStars = ({Review_Count , Star_Size}) => {
             empty : Number.isInteger(Review_Count) ? 5 - wholeStars : 4 - wholeStars ,
         })
 
+        // console.log("Empty Stars : " , starCounts.empty);
+        // console.log("Half Stars : " , starCounts.half);
+        // console.log("Full Stars : " , starCounts.full);
+
 
     } , [Review_Count]);
 
@@ -34,7 +38,8 @@ const RatingStars = ({Review_Count , Star_Size}) => {
 
         {/* full stars */}
         {
-            [...new Array(starCounts.full)].map((_ , index)=> {
+            [...new Array(starCounts.full)]?.fill(0).map((_ , index)=> {
+
                 return <TiStarFullOutline  key={index}  size={Star_Size || 20} />
             } )
         }
@@ -42,7 +47,7 @@ const RatingStars = ({Review_Count , Star_Size}) => {
         {/* half stars */}
 
         {
-            [...new Array(starCounts.half)].map((_ , index)=> {
+            [...new Array(starCounts.half)]?.fill(0).map((_ , index)=> {
                 return <TiStarHalfOutline key={index} size={Star_Size || 20} />
             })
         }
@@ -50,7 +55,12 @@ const RatingStars = ({Review_Count , Star_Size}) => {
         {/* empty stars */}
 
         {
-            [...new Array(starCounts.empty)].map((_ , index)=> {
+            [...new Array(starCounts.empty)]?.fill(0).map((_ , index)=> {
+
+                console.log("ARRAY : ",[...new Array(starCounts.empty)] )
+                console.log("ARRAY Length : ",[...new Array(starCounts.empty)].length )
+
+                
                 return <TiStarOutline key={index} size={Star_Size || 20} />
             })
         }
